@@ -1,0 +1,18 @@
+index.js
+
+@@ -0,0 +242,14 @@ 
+window.addEventListener("load", function() {
+       var keygen = document.createElement("keygen");
+       document.getElementById("keygen-container").appendChild(keygen);
+     },
++    "persistent-storage": function() {
+       // https://storage.spec.whatwg.org
++      navigator.storage.persist().then(
++        function(persisted) {
++          displayOutcome("persistent-storage", persisted ? "success" : "default")(persisted);
++        },
++        displayOutcome("persistent-storage", "error")
++      )
+     }
+   };
+ 
