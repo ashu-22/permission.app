@@ -1,0 +1,27 @@
+@@ -103,25 +103,25 @@ 
+window.addEventListener("load", function() {
+         displayOutcome("location", "error")
+       );
+     },
++    "camera": function() {
+       navigator.getUserMedia(
++        {video: true},
++        displayOutcome("camera", "success"),
++        displayOutcome("camera", "error")
+       );
+     },
++    "microphone": function() {
+       navigator.getUserMedia(
++        {audio: true},
++        displayOutcome("microphone", "success"),
++        displayOutcome("microphone", "error")
+       );
+     },
++    "camera+microphone": function() {
+       navigator.getUserMedia(
+         {audio: true, video: true},
++        displayOutcome("camera+microphone", "success"),
++        displayOutcome("camera+microphone", "error")
+       );
+     },
+     "midi": function() {
